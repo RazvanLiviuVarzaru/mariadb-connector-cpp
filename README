@@ -158,3 +158,4 @@ For further use one may refer to JDBC specs.
 
 Except Driver object, normally this is application's responsibility to delete
 objects returned by the connector.
+
