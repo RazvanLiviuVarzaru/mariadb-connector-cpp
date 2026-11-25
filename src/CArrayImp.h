@@ -27,8 +27,8 @@
 #include <cstring>
 #include "CArray.hpp"
 
-#define BYTES_INIT(STR) {STR, STR!=nullptr ? strlen(STR) + 1 : 1}
-#define BYTES_STR_INIT(STR) {STR.c_str(), STR.length()}
+#define BYTES_INIT(STR) {STR!=nullptr ? strlen(STR) + 1 : 1, STR}
+#define BYTES_STR_INIT(STR) {STR.length(), STR.c_str()}
 #define BYTES_ASSIGN_STR(BYTES, STR) BYTES.assign(STR.c_str(), STR.length())
 
 namespace sql
@@ -62,7 +62,7 @@ template <class T> CArray<T>::CArray(T _arr[], size_t len) : arr(_arr), length(0
 }
 
 
-template <class T> CArray<T>::CArray(const T _arr[], size_t len)
+template <class T> CArray<T>::CArray(size_t len, const T _arr[])
   : CArray(len)
 {
   std::memcpy(arr, _arr, len*sizeof(T));

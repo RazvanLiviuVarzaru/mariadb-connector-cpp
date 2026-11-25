@@ -54,7 +54,7 @@ namespace sql
 
     /* This constructor takes existing(stack?) array for "storing". Won't delete */
     CArray(T _arr[], size_t len);
-    CArray(const T _arr[], size_t len);
+    CArray(size_t len, const T _arr[]);
 
     ~CArray();
 

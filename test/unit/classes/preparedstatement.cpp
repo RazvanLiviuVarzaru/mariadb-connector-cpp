@@ -2280,7 +2280,7 @@ void preparedstatement::concpp153_mbCsParamEscaping()
     csCon.reset(getConnection(&props));
 
     pstmt.reset(csCon->prepareStatement("SELECT ?"));
-    sql::bytes binaryValue(value.c_str(), value.length());
+    sql::bytes binaryValue(value.length(), value.c_str());
     pstmt->setBytes(1, &binaryValue);
     res.reset(pstmt->executeQuery());
     ASSERT(res->next());

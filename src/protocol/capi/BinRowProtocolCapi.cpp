@@ -1715,8 +1715,8 @@ namespace capi
         // C/C resets length for fixed size types, so we need to use buffer_lenght in such case as it
         // should be equal to the that fixed size. Also, we need to keep in mind evil servers that can
         // forge metadata and send as lenght that is greater than buffer_length.
-        rowDataCache.emplace_back(static_cast<const char*>(b.buffer),
-          b.length_value && b.length_value < b.buffer_length ? b.length_value : b.buffer_length);
+        rowDataCache.emplace_back(b.length_value && b.length_value < b.buffer_length ? b.length_value : b.buffer_length,
+          static_cast<const char*>(b.buffer));
       }
     }
   }

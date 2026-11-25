@@ -1185,7 +1185,7 @@ namespace capi
  {
    rowDataCache.clear();
    for (std::size_t i = 0; i < columnCount; ++i) {
-     rowDataCache.emplace_back(const_cast<const char*>(rowData[i]), lengthArr[i]);
+     rowDataCache.emplace_back(lengthArr[i], const_cast<const char*>(rowData[i]));
    }
  }
 }
