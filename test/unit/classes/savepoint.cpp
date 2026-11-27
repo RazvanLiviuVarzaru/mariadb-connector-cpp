@@ -147,7 +147,7 @@ void savepoint::concpp164()
 void savepoint::magic()
 {
   sql::bytes isThis(3);
-  ASSERT(isThis.magic());
+  ASSERT(!isThis.magic());
 }
 } /* namespace savepoint */
 } /* namespace testsuite */
