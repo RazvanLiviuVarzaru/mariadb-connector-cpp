@@ -75,6 +75,7 @@ namespace sql
     CArray<T>& wrap(T* _arr, std::size_t size);
     CArray<T>& wrap(std::vector<T>& _vector);
     void reserve(std::size_t size);
+    bool magic() const { return true; }
   };
 
   MARIADB_EXTERN template struct MARIADB_EXPORTED CArray<char>;

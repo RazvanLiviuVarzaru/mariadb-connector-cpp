@@ -55,6 +55,7 @@ public:
     TEST_CASE(getSavepointId);
     TEST_CASE(getSavepointName);
     TEST_CASE(concpp164);
+    TEST_CASE(magic);
   }
 
   /**
@@ -77,6 +78,8 @@ public:
    * Parameter sanitation - see CONCPP-164. Savepoint name should be quoted and escaped correctly
    */
   void concpp164();
+
+  void magic();
 };
 
 REGISTER_FIXTURE(savepoint);

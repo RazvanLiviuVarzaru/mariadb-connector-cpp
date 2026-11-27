@@ -144,5 +144,10 @@ void savepoint::concpp164()
     fail(e.what(), __FILE__, __LINE__);
   }
 }
+void savepoint::magic()
+{
+  sql::bytes isThis(3);
+  ASSERT(isThis.magic());
+}
 } /* namespace savepoint */
 } /* namespace testsuite */
